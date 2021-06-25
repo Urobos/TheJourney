@@ -49,7 +49,6 @@ export class HeroComponent implements OnInit {
       this.magicPoints -= this.batlleManager.spellCost
       this.batlleManager.damageFromHero = this.batlleManager.magicDamage;
       this.batlleManager.onFirstComponentButtonClick();
-      alert("111");
       if(this.batlleManager.damageFromMonster != -2) {
         if(this.batlleManager.damageFromMonster > this.defense) {
           this.aktualHp -= this.batlleManager.damageFromMonster - this.defense;

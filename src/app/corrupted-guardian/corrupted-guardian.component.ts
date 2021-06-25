@@ -33,22 +33,15 @@ export class CorruptedGuardianComponent implements OnInit {
   }
   
   monsterAction() : void {
-    //STARE ZABEZPIECZENIE
-    if(this.batlleManager.damageFromMonster == -2) {
-      alert("222");
+    if(this.batlleManager.damageFromHero >= this.hp) {
+      this.batlleManager.damageFromMonster = -2;
+      // nie this.Data.changeValue(), bo nie działa nie wiem czemu
+      this.helpfulValues.val.next(!this.noBatlle);
+      this.location.back()
     }
-    else
-    {
-      if(this.batlleManager.damageFromHero >= this.hp) {
-        this.batlleManager.damageFromMonster = -2;
-        // nie this.Data.changeValue(), bo nie działa nie wiem czemu
-        this.helpfulValues.val.next(!this.noBatlle);
-        this.location.back()
-      }
-      else {
-        this.hp -= this.batlleManager.damageFromHero;
-        this.batlleManager.damageFromMonster = this.randomAtack();
-      }
+    else {
+      this.hp -= this.batlleManager.damageFromHero;
+      this.batlleManager.damageFromMonster = this.randomAtack();
     }
   }
 
