@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class CorruptedGuardianComponent implements OnInit {
 
-  name: string ="Corrupted Guardian"; 
+  name: string = "Corrupted Guardian";
   hp: number = 8;
   noBatlle!: boolean;
 
