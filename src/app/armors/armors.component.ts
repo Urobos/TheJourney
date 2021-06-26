@@ -8,7 +8,6 @@ import { ArmorService } from '../armor.service';
   styleUrls: ['./armors.component.css']
 })
 export class ArmorsComponent implements OnInit {
-
   armors: Armor[] = [];
 
   constructor(
@@ -23,5 +22,4 @@ export class ArmorsComponent implements OnInit {
     this.armorService.getArmors()
       .subscribe(armors => this.armors = armors);
   }
-
 }
